@@ -16,7 +16,7 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 
 //midleware entrée
-app.get('/',(req, res) => {
+app.get('/ejs',(req, res) => {
     console.log(' connection : ' + req.url);
     res.status(200).render('monHtml.ejs', {data: "pomme"})
 })

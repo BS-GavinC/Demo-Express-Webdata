@@ -1,0 +1,7 @@
+const homeController = {
+    get_index : (req, res) => {
+        res.status(200).end("Bien joué pour la manip")
+    }
+}
+
+module.exports = homeController

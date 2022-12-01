@@ -1,11 +1,9 @@
 const express = require('express')
 const homerouter = express.Router()
+const homeController = require('../controllers/homeController')
 
-homerouter.get('/', (req, res) => {
-    console.log('je suis home');
-    res.sendStatus(200)
-    
-})
+
+homerouter.get('/', homeController.get_index)
 
 
 homerouter.get('/:id([0-9]+)', (req, res) => {
