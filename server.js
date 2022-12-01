@@ -1,7 +1,7 @@
 const express = require('express')
 const router = require('./routers/router')
 const bodyParser = require('body-parser')
-
+var cors = require('cors')
 require('dotenv').config()
 
 const jsonParser = bodyParser.json()
@@ -9,6 +9,8 @@ const jsonParser = bodyParser.json()
 const port = process.env.PORT
 
 const app = express()
+
+app.use(cors())
 
 app.use(bodyParser.json())
 app.use(express.static("public"))
@@ -28,7 +30,7 @@ app.get('/get', (req, res) => {
 
 app.post('/post', (req, res) => {
     console.log(req.body);
-    req.body.name = "fabrice"
+    req.body.name = "Marcel"
     res.status(200).json(req.body)
 })
     
